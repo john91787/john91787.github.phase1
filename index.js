@@ -4,3 +4,9 @@ const getQuote = () => {
 }
 
 getQuote().then(console.log)
+
+const QuoteDiv = (randomquote) => {
+    const div = documnet.createElement('div')
+    const p = document.createElement('p')
+    const h3 = document.createElement('h3')
+}
