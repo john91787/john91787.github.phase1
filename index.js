@@ -9,4 +9,10 @@ const QuoteDiv = (randomquote) => {
     const div = documnet.createElement('div')
     const p = document.createElement('p')
     const h3 = document.createElement('h3')
+
+    h3.innerText = randomquote.author
+    p.innerText = randomquote.content
+
+
 }
+
