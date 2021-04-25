@@ -1,9 +1,9 @@
 const getQuote = () => {
     return fetch('https://www.breakingbadapi.com/api/quote/random')
         .then(res => res.json())
+        .catch(err => console.log(err))
 }
 
-getQuote().then(console.log)
 
 const QuoteDiv = (randomquote) => {
     const div = documnet.createElement('div')
@@ -13,6 +13,14 @@ const QuoteDiv = (randomquote) => {
     h3.innerText = randomquote.author
     p.innerText = randomquote.content
 
+    div.appendChild(h3)
+    div.appendChild(p)
 
+    return div
 }
 
+const appendQuote = (quote)=>{
+    const quoteContainer = document.getElementById('quote-container')
+    quoteContainer.innerHTML = ""
+    quoteContainer.appendChild(quote)
+}
