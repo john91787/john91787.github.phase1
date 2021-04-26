@@ -45,10 +45,10 @@ let glyphStates = {
   };
   
   let colorStates = {
-    "red" : "",
-    "": "red"
+    "green" : "",
+    "": "green"
   };
-  let articleHearts = document.querySelectorAll(".like-glyph");
+  let articleHearts = document.querySelectorAll(".like-quote");
   function likeCallback(e) {
     let heart = e.target;
     mimicServerCall()
