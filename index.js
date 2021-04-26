@@ -1,10 +1,7 @@
-
-
 const getQuote = () => {
     return fetch('https://www.breakingbadapi.com/api/quote/random')
         .then(res => res.json())
-        
-        
+            
 }
 
 
@@ -41,3 +38,32 @@ button.addEventListener('click', () => {
         appendQuote(quoteDiv)
     })
 })
+
+let glyphStates = {
+    "♡": "♥",
+    "♥": "♡"
+  };
+  
+  let colorStates = {
+    "red" : "",
+    "": "red"
+  };
+  let articleHearts = document.querySelectorAll(".like-glyph");
+  function likeCallback(e) {
+    let heart = e.target;
+    mimicServerCall()
+        heart.innerText = glyphStates[heart.innerText];
+        heart.style.color = colorStates[heart.style.color];
+      }
+     
+  
+  for (let glyph of articleHearts) {
+    glyph.addEventListener("click", likeCallback);
+  }
+  function mimicServerCall() {
+    return new Promise(function(resolve, reject) {
+      setTimeout(function() {
+        resolve("Pretend remote server notified of action!");
+      }, 300);
+    });
+  }
